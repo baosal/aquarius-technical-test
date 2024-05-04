@@ -1,0 +1,9 @@
+:root {
+  --bg-clear: #ffffff;
+  --bg-clear-40: #ffffff66;
+  /* or any other variables/style */
+}
+[data-theme='dark'] {
+  --bg-clear: #000;
+  --bg-clear-40: #1A1A1A 50%;
+}

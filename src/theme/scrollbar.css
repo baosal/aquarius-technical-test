@@ -1,0 +1,20 @@
+/* For scrollbars are children of  this layout*/
+/* width for vertical scroll and height for horizontal scroll */
+::-webkit-scrollbar {
+  @apply w-[9px] h-[9px];
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-stroke/light;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-surface/neutral-dark rounded-8;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-surface/neutral-darker;
+}
