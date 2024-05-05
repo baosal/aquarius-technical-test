@@ -4,11 +4,25 @@
   --clear-40: #ffffff66;
   --clear-20: #ffffff33;
   --neutral: #666666;
-  --dark: 000000;
+  --dark: #000000;
+  --dark-flex: #000000;
   --primary: #6C40B5;
+  --prune-700: #6C40B5;
   --primary-50: #6C40B580;
   --primary-20: #6C40B533;
-  /* or any other variables/style */
+  background: url(../background/bg-light.png) no-repeat center center fixed;
 }
-[data-theme='dark'] {
+[data-theme='night'] {
+  background: url(../background/bg-dark.png) no-repeat center center fixed;
+  --clear: #1A1A1A;
+  --clear-50: #1A1A1A80;
+  --clear-40: #1A1A1A66;
+  --clear-20: #1A1A1A33;
+  --neutral: #FFFFFF;
+  --dark: #FFFFFF;
+  --dark-flex: #FFFFFF80;
+  --prune-700: #28124D;
+  --primary: #FFFFFF;
+  --primary-50: #FFFFFF80;
+  --primary-20: #FFFFFF33;
 }

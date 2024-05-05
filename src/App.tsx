@@ -1,20 +1,24 @@
-import React from 'react';
 import './App.css';
 import 'react-toastify/dist/ReactToastify.css';
-import { useEffect } from 'react'
-import { themeChange } from 'theme-change'
 import { WeatherDashboard } from './screen/Dashboard/WeatherDashboard';
 import { SwtichTheme } from './components/SwitchTheme/SwitchTheme';
+import { ThemeContext } from './context';
+import { useState } from 'react';
 
 function App() {
-  useEffect(() => {
-    themeChange(false)
-  }, [])
+  const [theme, setTheme] = useState('light')
+  const onSwitchTheme = () => {
+    const newTheme = theme === 'light' ? 'night' : 'light'
+    setTheme(newTheme)
+    document.documentElement.setAttribute('data-theme', newTheme);
+  }
   return (
-    <div>
-      {/* <SwtichTheme></SwtichTheme> */}
-      <WeatherDashboard></WeatherDashboard>
-    </div>
+    <div className='h-screen w-screen text-text-dark'>
+      <ThemeContext.Provider value={theme} >
+        <SwtichTheme onChange={onSwitchTheme}></SwtichTheme>
+        <WeatherDashboard></WeatherDashboard>
+      </ThemeContext.Provider>
+    </div >
   );
 }
 

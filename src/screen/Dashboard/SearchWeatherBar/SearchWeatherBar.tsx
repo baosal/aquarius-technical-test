@@ -14,7 +14,7 @@ export const SearchWeatherBar = ({
     try {
       setLoading(true)
       const response = await fetchGeo(name)
-      if (response.length == 0) {
+      if (response.length === 0) {
         throw new Error()
       }
       const locations = response.map((item: any) => {
@@ -39,7 +39,13 @@ export const SearchWeatherBar = ({
   return (
     <>
       <ToastContainer />
-      <Combobox onSelectItem={onSelectLocation} onSearch={onGetGeo} options={locationSuggest} loading={isLoading}></Combobox>
+      <Combobox
+        placeholder="City name, State, Country Code"
+        onSelectItem={onSelectLocation}
+        onSearch={onGetGeo}
+        options={locationSuggest}
+        loading={isLoading}>
+      </Combobox>
     </>
   )
 };

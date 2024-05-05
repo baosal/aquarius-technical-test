@@ -2,7 +2,7 @@ import fontSize from './fontSize'
 import fontWeight from './fontWeight'
 import spacing from './spacing'
 import borderRadius from './borderRadius'
-import themeColors from './themeColors'
+import themeColors from './colorVariant'
 
 const theme = {
   screens: {

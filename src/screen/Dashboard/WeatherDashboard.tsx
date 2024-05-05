@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { WeatherCard as WeatherInformation } from 'src/components/WeatherCard/WeatherCard';
 import { SearchHistory } from './SearchHistory/SearchHistory';
 import { SearchWeatherBar } from './SearchWeatherBar/SearchWeatherBar';
@@ -12,10 +12,10 @@ export const WeatherDashboard = () => {
   const [isLoading, setIsLoading] = useState(false)
   const [searchHistory, setSearchHistory] = useState(localSearchHistory)
   const [selectedLocation, setSelectedLocation] = useState<any>(formatWeatherInformation(localSearchHistory[0]))
-  const onGetWeather = async (name: any, noUpdateHistory = false) => {
+  const onGetWeather = async (item: any, noUpdateHistory = false) => {
     setIsLoading(true)
     try {
-      const response = await fetchWeather(name.long, name.lat)
+      const response = await fetchWeather(item.long, item.lat)
       setSelectedLocation(formatWeatherInformation(response))
       if (!noUpdateHistory) {
         setSearchHistory([{ ...response, time: new Date() }, ...searchHistory])
@@ -34,6 +34,11 @@ export const WeatherDashboard = () => {
     setSearchHistory(newSearchHistory)
     LocalStorageUtil.setItem('searchHistory', newSearchHistory);
   }
+  useEffect(() => {
+    if (searchHistory.length === 0) {
+      onGetWeather({ long: -81.2434, lat: 42.9832 }, true);
+    }
+  }, [])
   return (
     <>
       <ToastContainer />
