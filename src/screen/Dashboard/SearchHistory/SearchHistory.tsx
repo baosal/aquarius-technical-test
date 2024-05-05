@@ -3,12 +3,12 @@ import { ISearchHistory } from './interface';
 import { WeatherItemListing } from 'src/components/WeatherItemListing/WeatherItemListing';
 
 const formatData = (items: any) => {
-  return items.map((item: { name: string; country: string; time: any; long: any; lat: any; }) => {
+  return items.map((item: any) => {
     return {
-      location: item.name + ', ' + item.country,
+      name: [item.name, item.sys?.country].join(', ').replace(/,*$/, ''),
       time: item.time,
-      long: item.long,
-      lat: item.lat,
+      long: item.coord?.lon,
+      lat: item.coord?.lat,
     }
   })
 }

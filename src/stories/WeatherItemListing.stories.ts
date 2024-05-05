@@ -28,18 +28,20 @@ export const Primary: Story = {
     onSearch: () => { },
     items: [
       {
-        id: '1',
-        location: 'Johor, MY',
+        name: "Ho Chi Minh City",
+        country: "VN",
+        state: '',
+        long: 106.7017555,
+        lat: 10.7758439,
         time: new Date(),
-        long: 1,
-        lat: 1
       },
       {
-        id: '2',
-        location: 'Johor, MYsecondary',
+        name: "Ho Chi Minh City2",
+        country: "VN",
+        state: '',
+        long: 106.7017555,
+        lat: 10.7758439,
         time: new Date(),
-        long: 1,
-        lat: 1
       }
     ]
   },

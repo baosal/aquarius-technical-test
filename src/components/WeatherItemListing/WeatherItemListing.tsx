@@ -13,7 +13,7 @@ export const WeatherItemListing = ({
       {label}
       <div className='flex flex-col gap-18px'>
         {items.map((item, index) =>
-          <WeatherItem key={index} location={item.location} time={item.time} onSearch={onSearch} onDelete={() => onDelete(index)} />
+          <WeatherItem key={index} item={item} onSearch={onSearch} onDelete={() => onDelete(index)} />
         )}
       </div>
     </div>

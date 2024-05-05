@@ -24,8 +24,14 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    location: 'Johor, MY',
-    time: new Date(),
+    item: {
+      name: "Ho Chi Minh City",
+      country: "VN",
+      state: '',
+      long: 106.7017555,
+      lat: 10.7758439,
+      time: new Date(),
+    },
     onDelete: () => { },
     onSearch: () => { },
   },

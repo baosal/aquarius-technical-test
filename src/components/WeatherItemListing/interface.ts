@@ -1,12 +1,6 @@
-export interface ISearchHistoryItem {
-  id: number | string;
-  location: string;
-  time: string | Date
-  long: string | number,
-  lat: string | number,
-}
+import { IWeatherItem } from "../WeatherItem/interface";
 export interface ISearchHistory {
-  items: ISearchHistoryItem[];
+  items: IWeatherItem[];
   label: string;
   onSearch?: Function;
   onDelete?: Function;

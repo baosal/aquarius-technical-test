@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import 'react-toastify/dist/ReactToastify.css';
 import { useEffect } from 'react'
 import { themeChange } from 'theme-change'
 import { WeatherDashboard } from './screen/Dashboard/WeatherDashboard';

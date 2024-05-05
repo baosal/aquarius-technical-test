@@ -1,6 +1,6 @@
 export interface ISearchHistoryItem {
   id: number | string;
-  location: string;
+  name: string;
   time: string | Date
 }
 export interface ISearchHistory {

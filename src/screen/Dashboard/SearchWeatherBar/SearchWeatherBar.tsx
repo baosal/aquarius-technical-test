@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { fetchGeo, fetchWeatherLocations } from "src/api/api";
+import { fetchGeo } from "src/api/api";
 import { IProps } from "./interface";
 import { Combobox } from "src/components/Combobox/Combobox";
+import { ToastContainer, toast } from 'react-toastify';
 
 export const SearchWeatherBar = ({
   onSelectLocation
@@ -9,11 +10,13 @@ export const SearchWeatherBar = ({
 
   const [locationSuggest, setLocationSuggest] = useState<any>([])
   const [isLoading, setLoading] = useState(false)
-  const onGetGeo = async (location: string) => {
+  const onGetGeo = async (name: string) => {
     try {
       setLoading(true)
-      const response = await fetchGeo(location)
-      console.log('onGetGeo', response)
+      const response = await fetchGeo(name)
+      if (response.length == 0) {
+        throw new Error()
+      }
       const locations = response.map((item: any) => {
         return {
           name: item.name,
@@ -26,11 +29,17 @@ export const SearchWeatherBar = ({
       setLocationSuggest(locations)
     } catch (error) {
       console.error(error);
+      toast.error("Sorry, it seems the location you entered is incorrect. Please try another location.", {
+        position: "top-left"
+      });
     } finally {
       setLoading(false)
     }
   }
   return (
-    <Combobox onSelectItem={onSelectLocation} onSearch={onGetGeo} options={locationSuggest} loading={isLoading}></Combobox>
+    <>
+      <ToastContainer />
+      <Combobox onSelectItem={onSelectLocation} onSearch={onGetGeo} options={locationSuggest} loading={isLoading}></Combobox>
+    </>
   )
 };
