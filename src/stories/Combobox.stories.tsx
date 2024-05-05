@@ -1,10 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Combobox } from 'src/components/Combobox/Combobox';
+import { Combobox } from 'components/Combobox/Combobox';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
   title: 'Example/Combobox',
   component: Combobox,
+  decorators: [
+    (Story) => (
+      <div className='w-screen max-w-[700px]'>
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -19,13 +26,40 @@ const meta = {
     onSearch: () => { },
     options: [
       {
-        key: '1',
-        label: 'Option 1'
+        "name": "Hawaii",
+        "country": "US",
+        "state": "Hawaii",
+        "long": -155.44869830348483,
+        "lat": 19.58955475
       },
       {
-        key: '12',
-        label: 'Option 1'
+        "name": "Hawai",
+        "country": "PK",
+        "state": "Khyber Pakhtunkhwa",
+        "long": 72.6111619,
+        "lat": 35.288205
       },
+      {
+        "name": "Hawai",
+        "country": "IN",
+        "state": "Arunachal Pradesh",
+        "long": 96.8124468,
+        "lat": 27.8843894
+      },
+      {
+        "name": "Hawai",
+        "country": "BR",
+        "state": "Minas Gerais",
+        "long": -44.0089753,
+        "lat": -19.8131397
+      },
+      {
+        "name": "Hawai",
+        "country": "IN",
+        "state": "Himachal Pradesh",
+        "long": 77.2202116,
+        "lat": 31.8770838
+      }
     ]
   },
 } satisfies Meta<typeof Combobox>;

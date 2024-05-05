@@ -1,10 +1,17 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { WeatherItem } from '../components/WeatherItem/WeatherItem';
+import { WeatherItemListing } from '../components/WeatherItemListing/WeatherItemListing'; //
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/WeatherItem',
-  component: WeatherItem,
+  title: 'Example/WeatherItemListing',
+  component: WeatherItemListing,
+  decorators: [
+    (Story) => (
+      <div className='w-screen max-w-[700px]'>
+        <Story />
+      </div>
+    ),
+  ],
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -14,9 +21,8 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {
-    customClass: 'w-[300px]'
   },
-} satisfies Meta<typeof WeatherItem>;
+} satisfies Meta<typeof WeatherItemListing>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -24,15 +30,26 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
-    item: {
-      name: "Ho Chi Minh City",
-      country: "VN",
-      state: '',
-      long: 106.7017555,
-      lat: 10.7758439,
-      time: new Date(),
-    },
+    label: 'Search History',
     onDelete: () => { },
     onSearch: () => { },
+    items: [
+      {
+        name: "Ho Chi Minh City",
+        country: "VN",
+        state: '',
+        long: 106.7017555,
+        lat: 10.7758439,
+        time: new Date(),
+      },
+      {
+        name: "Ho Chi Minh City2",
+        country: "VN",
+        state: '',
+        long: 106.7017555,
+        lat: 10.7758439,
+        time: new Date(),
+      }
+    ]
   },
 };

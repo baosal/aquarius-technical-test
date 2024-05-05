@@ -1,7 +1,7 @@
 
 import { IconNames, getSVGIcons } from './svg-icon'
 import { useContext } from 'react';
-import { ThemeContext } from 'src/context';
+import { ThemeContext } from 'context';
 interface IIconsProps {
   name: IconNames
   size?: number

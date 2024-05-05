@@ -1,6 +1,6 @@
 import React from 'react';
 import { IProps } from './interface';
-import { IconSVG } from 'src/components/IconSVG/IconSVG';
+import { IconSVG } from 'components/IconSVG/IconSVG';
 import moment from 'moment';
 
 export const WeatherItem = ({

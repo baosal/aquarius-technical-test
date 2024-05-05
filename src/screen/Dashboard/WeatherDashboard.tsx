@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { WeatherCard as WeatherInformation } from 'src/components/WeatherCard/WeatherCard';
+import { WeatherCard as WeatherInformation } from 'components/WeatherCard/WeatherCard';
 import { SearchHistory } from './SearchHistory/SearchHistory';
 import { SearchWeatherBar } from './SearchWeatherBar/SearchWeatherBar';
-import LocalStorageUtil from 'src/helper/local-storage';
+import LocalStorageUtil from 'helper/local-storage';
 import { formatWeatherInformation } from './helper';
-import { fetchWeather } from 'src/api/api';
+import { fetchWeather } from 'api/api';
 import { ToastContainer, toast } from 'react-toastify';
 
 const localSearchHistory = LocalStorageUtil.getItem('searchHistory') || []
@@ -23,7 +23,7 @@ export const WeatherDashboard = () => {
       }
     } catch (error) {
       console.error(error);
-      toast.error("Apologies, we encountered an error retrieving the weather information. Please try again later. !", {
+      toast.error("We encountered an error retrieving the weather information. Please try again later. !", {
         position: "top-left"
       });
     }
@@ -48,7 +48,7 @@ export const WeatherDashboard = () => {
 
       <div className='flex justify-center'>
         <div className='max-w-[718px] min-w-[378px] w-full my-26px'>
-          <div className='mx-16px relative z-20'>
+          <div className='mx-16px z-20 sticky top-0px'>
             <SearchWeatherBar onSelectLocation={onGetWeather}></SearchWeatherBar>
           </div>
           <WeatherInformation data={selectedLocation}>

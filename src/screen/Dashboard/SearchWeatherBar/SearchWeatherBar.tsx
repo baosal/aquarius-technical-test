@@ -1,7 +1,7 @@
 import { useState } from "react";
-import { fetchGeo } from "src/api/api";
+import { fetchGeo } from "api/api";
 import { IProps } from "./interface";
-import { Combobox } from "src/components/Combobox/Combobox";
+import { Combobox } from "components/Combobox/Combobox";
 import { ToastContainer, toast } from 'react-toastify';
 
 export const SearchWeatherBar = ({

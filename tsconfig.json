@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "baseUrl": "src",
     "target": "es5",
     "lib": [
       "dom",
@@ -19,18 +20,13 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*" // set path `@/*` as alias of `src/*`
+      ]
+    }
   },
   "include": [
     "src",
-  ],
-  "devServer": {
-    "client": {
-      "overlay": {
-        "errors": true,
-        "warnings": false,
-        "runtimeErrors": true,
-      },
-    },
-  },
+  ]
 }

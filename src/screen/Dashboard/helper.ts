@@ -1,12 +1,12 @@
-export const formatWeatherInformation = (name: any) => {
-  if (!name) return {}
+export const formatWeatherInformation = (item: any) => {
+  if (!item) return {}
   return {
-    name: name.name + ', ' + name.sys?.country,
-    temp: Math.round(name.main?.temp - 273.15),
-    tempMax: Math.round(name.main?.temp_max - 273.15),
-    tempMin: Math.round(name.main?.temp_min - 273.15),
-    weather: ['Rain'].includes(name.weather) ? 'Clouds' : 'Sunny' as ('Clouds' | 'Sunny'),
-    humidity: name.main?.humidity,
+    name: item.name + ', ' + item.sys?.country,
+    temp: Math.round(item.main?.temp - 273.15),
+    tempMax: Math.round(item.main?.temp_max - 273.15),
+    tempMin: Math.round(item.main?.temp_min - 273.15),
+    weather: ['Rain', 'Clouds'].includes(item.weather?.[0]?.main) ? 'Clouds' : 'Sunny' as ('Clouds' | 'Sunny'),
+    humidity: item.main?.humidity,
     time: new Date(),
   }
 }

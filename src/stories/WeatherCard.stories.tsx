@@ -33,7 +33,7 @@ export const Primary: Story = {
       tempMax: '28',
       tempMin: '26',
       humidity: 58,
-      weather: 'Clouds'
+      weather: 'Sunny'
     }
   },
 };

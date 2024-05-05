@@ -1,6 +1,6 @@
 import React from 'react';
 import { ISearchHistory } from './interface';
-import { WeatherItemListing } from 'src/components/WeatherItemListing/WeatherItemListing';
+import { WeatherItemListing } from 'components/WeatherItemListing/WeatherItemListing';
 
 const formatData = (items: any) => {
   return items.map((item: any) => {
