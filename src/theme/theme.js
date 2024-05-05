@@ -2,10 +2,12 @@ import fontSize from './fontSize'
 import fontWeight from './fontWeight'
 import spacing from './spacing'
 import borderRadius from './borderRadius'
-import lineHeight from './lineHeight'
 import themeColors from './themeColors'
 
 const theme = {
+  screens: {
+    'sm': '590px',
+  },
   animation: {
     hide: 'hide 0.2s linear forwards',
     show: 'show 0.2s linear forwards'
@@ -31,19 +33,12 @@ const theme = {
     }
   },
   spacing: spacing,
-  fontFamily: {
-    'title': ['Nunito', 'Nunito Sans']
-  },
   fontSize: fontSize,
   fontWeight: fontWeight,
-  lineHeight: lineHeight,
   colors: themeColors,
   borderRadius: borderRadius,
   wordBreak: {
     'break-word': 'break-word'
-  },
-  flex: {
-    2: '2 2 0%'
   },
   transitionProperty: {
     height: 'height',

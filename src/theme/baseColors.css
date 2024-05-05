@@ -1,9 +1,12 @@
 :root {
-  --bg-clear: #ffffff;
-  --bg-clear-40: #ffffff66;
+  --clear: #ffffff;
+  --clear-50: #ffffff80;
+  --clear-40: #ffffff66;
+  --clear-20: #ffffff33;
+  --neutral: #666666;
+  --dark: 000000;
+  --primary: #6C40B5;
   /* or any other variables/style */
 }
 [data-theme='dark'] {
-  --bg-clear: #000;
-  --bg-clear-40: #1A1A1A 50%;
 }

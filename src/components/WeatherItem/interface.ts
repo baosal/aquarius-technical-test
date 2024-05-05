@@ -1,5 +1,8 @@
 export interface IWeatherItem {
-  location: string,
-  time: string | Date | null,
-  customClass?: string;
+  id: number | string;
+  location: string
+  time: string | Date | null
+  onSearch?: Function | null
+  onDelete?: Function | null
+  customClass?: string
 }

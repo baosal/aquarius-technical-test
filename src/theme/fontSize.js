@@ -2,7 +2,7 @@ const mappingFontSizetData = () => {
   const result = {}
 
   // eslint-disable-next-line no-plusplus
-  for (let i = 8; i <= 64; i++) {
+  for (let i = 8; i <= 100; i++) {
     result[`${i}px`] = `${i}px`
   }
 
