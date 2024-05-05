@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { useEffect } from 'react'
 import { themeChange } from 'theme-change'
-import { DashBoard } from './screen/Dashboard/Dashboard';
+import { WeatherDashboard } from './screen/Dashboard/WeatherDashboard';
 import { SwtichTheme } from './components/SwitchTheme/SwitchTheme';
 
 function App() {
@@ -12,7 +12,7 @@ function App() {
   return (
     <div>
       {/* <SwtichTheme></SwtichTheme> */}
-      <DashBoard></DashBoard>
+      <WeatherDashboard></WeatherDashboard>
     </div>
   );
 }

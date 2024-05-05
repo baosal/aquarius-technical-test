@@ -34,7 +34,7 @@ export const WeatherCard = ({
               {formatTime}
             </div>
             <div>
-              {`Humidity: ${humidity}%`}
+              {`Humidity: ${humidity || 'N/A'}%`}
             </div>
             <div>
               {weather}

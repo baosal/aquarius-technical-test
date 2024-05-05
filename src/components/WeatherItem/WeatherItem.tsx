@@ -4,7 +4,6 @@ import { IconSVG } from 'src/components/IconSVG/IconSVG';
 import moment from 'moment';
 
 export const WeatherItem = ({
-  id,
   location = '',
   time = null,
   onDelete,
@@ -21,8 +20,8 @@ export const WeatherItem = ({
         <div className='max-sm:text-10px'>{formatTime}</div>
       </div>
       <div className='flex justify-between items-center gap-10px'>
-        {onSearch && <IconSVG name='Search_34' onClick={() => onSearch(id)}></IconSVG>}
-        {onDelete && <IconSVG name='Delete_34' onClick={() => onDelete(id)}></IconSVG>}
+        {onSearch && <IconSVG name='Search_34' onClick={() => onSearch(location)}></IconSVG>}
+        {onDelete && <IconSVG name='Delete_34' onClick={() => onDelete()}></IconSVG>}
       </div>
     </div>
   );

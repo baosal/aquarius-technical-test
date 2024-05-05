@@ -17,7 +17,7 @@ export const Temperature = ({
   }
   return (
     <div className={getClassName() + ' '}>
-      {temp}°
+      {temp || 0}°
     </div>
   );
 }

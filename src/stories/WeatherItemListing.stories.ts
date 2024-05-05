@@ -30,12 +30,16 @@ export const Primary: Story = {
       {
         id: '1',
         location: 'Johor, MY',
-        time: new Date()
+        time: new Date(),
+        long: 1,
+        lat: 1
       },
       {
         id: '2',
         location: 'Johor, MYsecondary',
-        time: new Date()
+        time: new Date(),
+        long: 1,
+        lat: 1
       }
     ]
   },

@@ -1,26 +1,26 @@
 import { useState } from "react";
-import { fetchWeather } from "src/api/api";
+import { fetchGeo, fetchWeatherLocations } from "src/api/api";
 import { IProps } from "./interface";
 import { Combobox } from "src/components/Combobox/Combobox";
 
-export const SearchBard = ({
+export const SearchWeatherBar = ({
   onSelectLocation
 }: IProps) => {
 
   const [locationSuggest, setLocationSuggest] = useState<any>([])
   const [isLoading, setLoading] = useState(false)
-  const onSearchLocation = async (location: string) => {
+  const onGetGeo = async (location: string) => {
     try {
       setLoading(true)
-      const response = await fetchWeather(location)
-      const locations = response.list.map(item => {
+      const response = await fetchGeo(location)
+      console.log('onGetGeo', response)
+      const locations = response.map((item: any) => {
         return {
           name: item.name,
-          country: item.sys?.country,
-          long: item.coord.lon,
-          lat: item.coord.lat,
-          main: item.main,
-          weather: item.weather?.[0]
+          country: item.country,
+          state: item.state,
+          long: item.lon,
+          lat: item.lat,
         }
       })
       setLocationSuggest(locations)
@@ -31,6 +31,6 @@ export const SearchBard = ({
     }
   }
   return (
-    <Combobox onSelectItem={onSelectLocation} onSearch={onSearchLocation} options={locationSuggest} loading={isLoading}></Combobox>
+    <Combobox onSelectItem={onSelectLocation} onSearch={onGetGeo} options={locationSuggest} loading={isLoading}></Combobox>
   )
 };

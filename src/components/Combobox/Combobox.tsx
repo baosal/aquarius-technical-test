@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useDetectClickOutside } from 'react-detect-click-outside';
 import { Input } from "../Input/Input";
 import { IProps } from "./interface";
 import { IconSVG } from "../IconSVG/IconSVG";
-
+let firtload = true
 export const Combobox = ({
   value,
   loading = false,
@@ -22,10 +22,16 @@ export const Combobox = ({
     setLocation(input)
     setIsShowDropdown(input ? true : false)
   }
-  const handleSearch = () => {
+  const handleSearch = async () => {
     if (loading) return
-    onSearch()
+    await onSearch(location)
+    firtload = false
   }
+  useEffect(() => {
+    if (!firtload) {
+      setIsShowDropdown(true)
+    }
+  }, [options])
   return (
     <div className="flex gap-20px w-full" ref={ref} onClick={() => setIsShowDropdown(true)}>
       <div className="relative flex-1">
@@ -50,7 +56,7 @@ export const Combobox = ({
                     </div>
                   </div>
                 )
-                : <div className="text-center px-8px py-12px">Location not found</div>
+                : <div className="text-center px-8px py-12px">{!firtload && 'Location not found'}</div>
               }
             </div>
           }
