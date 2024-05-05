@@ -4,5 +4,5 @@ import theme from './src/theme/theme';
 module.exports = {
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: theme,
-  plugins: [],
+  plugins: [require('daisyui'),],
 }

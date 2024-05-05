@@ -1,6 +1,6 @@
 import React from 'react';
 import { IWeatherItem } from './interface';
-import { IconSVG } from '@/components/IconSVG/IconSVG';
+import { IconSVG } from 'src/components/IconSVG/IconSVG';
 import moment from 'moment';
 
 export const WeatherItem = ({
@@ -21,8 +21,8 @@ export const WeatherItem = ({
         <div className='max-sm:text-10px'>{formatTime}</div>
       </div>
       <div className='flex justify-between items-center gap-10px'>
-        {onSearch && <IconSVG name='Search_34' onClick={onSearch(id)}></IconSVG>}
-        {onDelete && <IconSVG name='Delete_34' onClick={onDelete(id)}></IconSVG>}
+        {onSearch && <IconSVG name='Search_34' onClick={() => onSearch(id)}></IconSVG>}
+        {onDelete && <IconSVG name='Delete_34' onClick={() => onDelete(id)}></IconSVG>}
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
-import { Combobox } from 'src/components/Combobox/Combobox';
+import { Input } from 'src/components/Input/Input';
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 const meta = {
-  title: 'Example/Combobox',
-  component: Combobox,
+  title: 'Example/Input',
+  component: Input,
   parameters: {
     // Optional parameter to center the component in the Canvas. More info: https://storybook.js.org/docs/configure/story-layout
     layout: 'centered',
@@ -14,21 +14,8 @@ const meta = {
   // More on argTypes: https://storybook.js.org/docs/api/argtypes
   // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
   args: {
-    value: '',
-    onSelectItem: () => { },
-    onSearch: () => { },
-    options: [
-      {
-        key: '1',
-        label: 'Option 1'
-      },
-      {
-        key: '12',
-        label: 'Option 1'
-      },
-    ]
   },
-} satisfies Meta<typeof Combobox>;
+} satisfies Meta<typeof Input>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
@@ -36,5 +23,6 @@ type Story = StoryObj<typeof meta>;
 // More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Primary: Story = {
   args: {
+    value: 'primary',
   },
 };

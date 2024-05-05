@@ -1,16 +1,15 @@
-import React from 'react';
 import { IWeatherCard } from './interface';
 import moment from 'moment';
 import { Temperature } from '../Temperature/Temperature';
-import sun from '@/background/sun.png';
-import cloud from '@/background/cloud.png';
+import sun from 'src/background/sun.png';
+import cloud from 'src/background/cloud.png';
 
 export const WeatherCard = ({
   humidity,
   location,
   temp,
-  tempH,
-  tempL,
+  tempMax,
+  tempMin,
   time,
   children,
   weather
@@ -25,12 +24,12 @@ export const WeatherCard = ({
           <div className='mb-16px'>Today’s Weather</div>
           <Temperature temp={temp} variant='primary'></Temperature>
           <div className='flex gap-4px mt-8px'>
-            H: <Temperature temp={tempH} /> L: <Temperature temp={tempL} />
+            H: <Temperature temp={tempMax} /> L: <Temperature temp={tempMin} />
           </div>
-          <div className='mt-4px flex justify-between gap-24px text-text-neutral font-700'>
+          <div className='mt-4px max-w-120px pr-10px flex justify-between gap-24px text-text-neutral font-700'>
             {location}
           </div>
-          <div className='flex max-sm:flex-col-reverse max-sm:text-end justify-between absolute bottom-0px right-10px gap-16px' style={{ width: 'calc(100% - 120px)' }}>
+          <div className='flex max-sm:flex-col-reverse max-sm:text-end justify-between absolute bottom-0px right-10px gap-16px' style={{ width: 'calc(100% - 145px)' }}>
             <div>
               {formatTime}
             </div>

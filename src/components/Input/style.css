@@ -1,0 +1,63 @@
+.base-input-wrapper {
+  padding: 5px;
+  border-radius: 12px;
+  overflow-x: hidden;
+  gap: .5rem;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 18rem;
+  align-items: center;
+}
+.input-primary:focus, .input-primary:focus-within {
+  --tw-border-opacity: 1;
+  outline-color: var(--primary-50);
+}
+.input:focus, .input:focus-within {
+  box-shadow: none;
+  outline-style: solid;
+  outline-width: 2px;
+  outline-offset: 2px;
+  outline-color: var(--primary-50);
+}
+
+.input {
+  flex-shrink: 1;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  height: 3rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  font-size: 1rem;
+  line-height: 2;
+  line-height: 1.5rem;
+  border-radius: var(--rounded-btn,.5rem);
+  border-width: 1px;
+  border-color: transparent;
+  --tw-bg-opacity: 1;
+  background-color: var(--fallback-b1,oklch(var(--b1)/var(--tw-bg-opacity)))
+}
+
+.input[type=number]::-webkit-inner-spin-button,.input-md[type=number]::-webkit-inner-spin-button {
+  margin-top: -1rem;
+  margin-bottom: -1rem;
+  margin-inline-end:-1rem
+}
+
+.input-xs[type=number]::-webkit-inner-spin-button {
+  margin-top: -.25rem;
+  margin-bottom: -.25rem;
+  margin-inline-end:0
+}
+
+.input-sm[type=number]::-webkit-inner-spin-button {
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-inline-end:0
+}
+
+.input-lg[type=number]::-webkit-inner-spin-button {
+  margin-top: -1.5rem;
+  margin-bottom: -1.5rem;
+  margin-inline-end:-1.5rem
+}

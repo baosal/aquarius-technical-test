@@ -5,4 +5,6 @@ export interface ISearchHistoryItem {
 }
 export interface ISearchHistory {
   items: ISearchHistoryItem[]
+  onSearch?: Function,
+  onDelete?: Function,
 }

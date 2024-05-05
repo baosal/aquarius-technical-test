@@ -6,6 +6,8 @@
   --neutral: #666666;
   --dark: 000000;
   --primary: #6C40B5;
+  --primary-50: #6C40B580;
+  --primary-20: #6C40B533;
   /* or any other variables/style */
 }
 [data-theme='dark'] {

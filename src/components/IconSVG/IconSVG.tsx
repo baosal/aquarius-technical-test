@@ -16,7 +16,7 @@ export const IconSVG = ({
   }
   const base64data = btoa(unescape(encodeURIComponent(svgIcon)));
   return (
-    <div className={`h-[36px] w-[36px] ${customClass}`} onClick={onClickIcon}>
+    <div className={`cursor-pointer ${customClass}`} onClick={onClickIcon}>
       <img src={`data:image/svg+xml;base64,${base64data}`} alt="" />
     </div>
   )

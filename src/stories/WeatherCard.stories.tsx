@@ -29,8 +29,8 @@ export const Primary: Story = {
     location: 'Johor, MY',
     time: new Date(),
     temp: '26',
-    tempH: '28',
-    tempL: '26',
+    tempMax: '28',
+    tempMin: '26',
     humidity: 58,
     weather: 'Clouds'
   },
