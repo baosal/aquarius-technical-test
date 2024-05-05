@@ -6,7 +6,6 @@
 body {
   background: url(./background/bg-light.png) no-repeat center center fixed;
   font-family: 'Noto Sans';
-  color: text-dark;
   * {
     box-sizing: border-box
   }

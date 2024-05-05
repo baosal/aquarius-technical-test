@@ -2,8 +2,8 @@ import React from 'react';
 import { IWeatherCard } from './interface';
 import moment from 'moment';
 import { Temperature } from '../Temperature/Temperature';
-import sun from 'src/background/sun.png';
-import cloud from 'src/background/cloud.png';
+import sun from '@/background/sun.png';
+import cloud from '@/background/cloud.png';
 
 export const WeatherCard = ({
   humidity,

@@ -1,6 +1,6 @@
 import React from 'react';
 import { ISearchHistory } from './interface';
-import { WeatherItem } from 'src/components/WeatherItem/WeatherItem';
+import { WeatherItem } from '@/components/WeatherItem/WeatherItem';
 
 export const WeatherItemListing = ({
   items,
